@@ -1,7 +1,6 @@
 const express = require("express");
 require("dotenv").config()
 const cors = require("cors");
-const serverless = require('serverless-http')
 
 
 //MIDDLEWARE
@@ -17,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ROUTES
 
-app.get('/users', (req, res) => {
+app.get('/', (req, res) => {
     res.json(users);
 });
 
@@ -28,6 +27,3 @@ PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
-
-module.exports = app;
-module.exports.handler = serverless(app);
