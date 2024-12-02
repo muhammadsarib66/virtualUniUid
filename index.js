@@ -1,28 +1,22 @@
 const express = require("express");
-require("dotenv").config()
+require("dotenv").config();
 const cors = require("cors");
 
-
-//MIDDLEWARE
-
-const users = ["bc240429953"];
+// MIDDLEWARE
+const users = ["BC240429953", "BC210400344"];
 
 const app = express();
-app.use(cors());
+app.use(cors()); // Allow cross-origin requests
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
 // ROUTES
-
 app.get('/', (req, res) => {
-    res.json(users);
+    res.json(users); // Send the array directly
 });
 
 // SERVER
-
-PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 7000; // Ensure the port matches your frontend fetch URL
 
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
