@@ -3,7 +3,7 @@ require("dotenv").config();
 const cors = require("cors");
 
 // MIDDLEWARE
-const users = ["BC240429953", "BC240430371"];
+const users = ["BC240429953", "BC240430371","bc240220029"];
 
 const app = express();
 app.use(cors()); // Allow cross-origin requests
